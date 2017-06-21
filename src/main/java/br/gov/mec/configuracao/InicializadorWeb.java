@@ -3,12 +3,10 @@ package br.gov.mec.configuracao;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.*;
 import javax.servlet.annotation.ServletSecurity;
-import java.util.EnumSet;
 
 
 public class InicializadorWeb implements WebApplicationInitializer {
