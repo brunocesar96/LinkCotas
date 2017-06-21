@@ -29,6 +29,7 @@ public class InicializadorWeb implements WebApplicationInitializer {
         ServletRegistration.Dynamic dispatcher = container.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(dispatcherContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping(DISPATCHER_SERVLET_MAPPING);
+        //
         //container.addFilter("My filter", Filtro.class).addMappingForServletNames(null,false,DISPATCHER_SERVLET_NAME);
 
          //Filtro do Spring Security
