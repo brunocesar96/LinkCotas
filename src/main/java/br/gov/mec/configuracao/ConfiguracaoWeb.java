@@ -10,6 +10,8 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.sql.DataSource;
@@ -59,18 +61,18 @@ public class ConfiguracaoWeb extends WebMvcConfigurerAdapter {
         return tx;
     }
 
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/**/*.html").addResourceLocations("/web/");
-//        registry.addResourceHandler("/web/**").addResourceLocations("/web/");
-//    }
-//
-//    @Override
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/").setViewName("/WEB-INF/pages/home.jsp");
-//        registry.addViewController("/upload").setViewName("/WEB-INF/pages/upload.jsp");
-//        registry.addViewController("/sucess").setViewName("/WEB-INF/pages/sucess.jsp");
-//    }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**/*.html").addResourceLocations("/web/");
+        registry.addResourceHandler("/web/**").addResourceLocations("/web/");
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("/WEB-INF/pages/home.jsp");
+        registry.addViewController("/upload").setViewName("/WEB-INF/pages/upload.jsp");
+        registry.addViewController("/sucess").setViewName("/WEB-INF/pages/sucess.jsp");
+    }
 
 //    @Override
 //    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
